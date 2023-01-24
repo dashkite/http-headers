@@ -1,0 +1,23 @@
+presets:
+  verify: null
+  update: null
+  release: null
+  esm: null
+
+  coffeescript:
+    targets:
+      node:
+        - preset: node
+          glob:
+            - '{src,test}/**/*.coffee'
+      browser:
+        - preset: browser
+          glob:
+            - src/**/*.coffee
+  yaml:
+    targets:
+      node: &yaml
+        - preset: js
+          glob:
+            - "{src,test}/**/*.yaml"
+      browser: *yaml

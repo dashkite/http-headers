@@ -1,0 +1,43 @@
+{
+  "name": "@dashkite/http-headers",
+  "version": "0.4.0",
+  "description": "Parser combinator library for JavaScript",
+  "keywords": [
+    "parser",
+    "combinator"
+  ],
+  "homepage": "https://github.com/dashkite/http-headers#readme",
+  "bugs": {
+    "url": "https://github.com/dashkite/http-headers/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashkite/http-headers.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Dan Yoder",
+  "exports": {
+    ".": {
+      "browser": "./build/browser/src/index.js",
+      "node": "./build/node/src/index.js"
+    }
+  },
+  "main": "build/node/src/index.js",
+  "files": [
+    "build/browser/src",
+    "build/node/src"
+  ],
+  "scripts": {
+    "test": "genie test"
+  },
+  "devDependencies": {
+    "@dashkite/amen": "^0.2.0",
+    "@dashkite/amen-console": "^0.0.2",
+    "@dashkite/assert": "^0.1.4",
+    "@dashkite/genie": "^0.5.11",
+    "@dashkite/genie-presets": "^0.6.0"
+  },
+  "dependencies": {
+    "@dashkite/parse": "^0.4.0"
+  }
+}

@@ -1,0 +1,17 @@
+Authorization:
+  parse:
+    - name: simple quoted
+      input: foo bar="baz"
+      expected:
+        scheme: foo
+        parameters:
+          bar: baz
+
+    - name: simple token
+      input: foo bar=abcdef123
+      expected:
+        scheme: foo
+        parameters:
+          bar: baz
+
+
