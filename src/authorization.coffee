@@ -24,7 +24,7 @@ obsText = Parse.re /^[\x80-\xFF]/
 # escape sequence
 # quoted-pair = "\" ( HTAB / SP / VCHAR / obs-text )
 quotedPair = Parse.all [
-  Parse.text "\\"
+  Parse.skip Parse.text "\\"
   Parse.any [
     htab
     sp
@@ -139,6 +139,22 @@ credentials = Parse.pipe [
 
 parse = Parse.parser credentials
 
+parseToken = Parse.parser token
+
+generate = ({ scheme, parameters, token }) ->
+  if parameters?
+    result = []
+    for key, value of parameters
+      try
+        parseToken value
+      catch
+        # JSON.stringify escapes quotes
+        value = JSON.stringify value
+      result.push "#{key}=#{value}"
+    "#{ scheme} #{result.join ', '}"
+
+
 export {
   parse
+  generate
 }

@@ -1,17 +1,23 @@
 Authorization:
   parse:
     - name: simple quoted
-      input: foo bar="baz"
+      input: foo bar="baz?"
       expected:
         scheme: foo
         parameters:
           bar: baz
 
     - name: simple token
-      input: foo bar=abcdef123
+      input: foo bar=abcdef$123~
       expected:
         scheme: foo
         parameters:
           bar: baz
 
+    - name: simple with quote
+      input: foo bar="abcdef\"123~"
+      expected:
+        scheme: foo
+        parameters:
+          bar: baz
 

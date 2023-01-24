@@ -21,7 +21,8 @@ do ->
             test scenario.name, ->
               # assert.equal scenario.expect
               #   Headers[ header ].parse scenario.input
-              console.log Headers[ header ].parse scenario.input
+              console.log result = Headers[ header ].parse scenario.input
+              console.log Headers[ header ].generate result
       ]
 
   process.exit if success then 0 else 1
