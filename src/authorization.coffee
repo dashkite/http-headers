@@ -81,7 +81,16 @@ token = Parse.pipe [
 # limited for use with base64 etc
 # token68 = 1*( ALPHA / DIGIT / "-" / "." / "_" / "~" / "+" / "/" )
 # *"="
-token68 = Parse.many Parse.re /^([a-zA-Z]|\d|[-._~+/])/
+token68 = Parse.pipe [
+  Parse.all [
+    Parse.pipe [
+      Parse.many Parse.re /^([a-zA-Z]|\d|[-._~+/])/
+      Parse.cat
+    ]
+    Parse.re /^=*/
+  ]
+  Parse.cat
+]
 
 # auth-param = token BWS "=" BWS ( token / quoted-string )
 authParam = Parse.all [
@@ -141,7 +150,7 @@ parse = Parse.parser credentials
 
 parseToken = Parse.parser token
 
-generate = ({ scheme, parameters, token }) ->
+format = ({ scheme, parameters, token }) ->
   if parameters?
     result = []
     for key, value of parameters
@@ -151,10 +160,13 @@ generate = ({ scheme, parameters, token }) ->
         # JSON.stringify escapes quotes
         value = JSON.stringify value
       result.push "#{key}=#{value}"
-    "#{ scheme} #{result.join ', '}"
-
+    "#{ scheme } #{result.join ', '}"
+  else if token?
+    "#{ scheme } #{ token }"
+  else
+    throw new Error "invalid authorization header description"
 
 export {
   parse
-  generate
+  format
 }

@@ -1,23 +1,34 @@
 Authorization:
-  parse:
-    - name: simple quoted
-      input: foo bar="baz?"
-      expected:
-        scheme: foo
-        parameters:
-          bar: baz
+  - name: simple quoted
+    input: foo bar="baz"
+    expect:
+      scheme: foo
+      parameters:
+        bar: baz
 
-    - name: simple token
-      input: foo bar=abcdef$123~
-      expected:
-        scheme: foo
-        parameters:
-          bar: baz
+  - name: simple token
+    input: foo bar=abcdef$123~
+    expect:
+      scheme: foo
+      parameters:
+        bar: abcdef$123~
 
-    - name: simple with quote
-      input: foo bar="abcdef\"123~"
-      expected:
-        scheme: foo
-        parameters:
-          bar: baz
+  - name: simple with quote
+    input: foo bar="abcdef\"123~"
+    expect:
+      scheme: foo
+      parameters:
+        bar: "abcdef\"123~"
 
+  - name: base64 bearer token
+    input: foo abcdef==
+    expect:
+      scheme: foo
+      token: abcdef==
+
+  - name: base64 quoted parameter
+    input: foo bar="abcdef=="
+    expect:
+      scheme: foo
+      parameters:
+        bar: abcdef==

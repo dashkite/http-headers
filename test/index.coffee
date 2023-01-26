@@ -10,19 +10,21 @@ do ->
 
   print await test "HTTP Headers", do ->
 
-    for header, { parse, format } of scenarios
+    for header, subscenarios of scenarios
+      
+      test header, do ({ parse, format } = {}) -> 
 
-      test header, [
+        { parse, format } = Headers[ header ]
 
-        test "parse", do ->
+        for scenario in subscenarios
 
-          for scenario in parse
-
-            test scenario.name, ->
-              # assert.equal scenario.expect
-              #   Headers[ header ].parse scenario.input
-              console.log result = Headers[ header ].parse scenario.input
-              console.log Headers[ header ].generate result
-      ]
+          test scenario.name, ->
+            
+            got = parse scenario.input
+            
+            assert.deepEqual scenario.expect, got
+            
+            assert.deepEqual scenario.expect,
+              parse format got
 
   process.exit if success then 0 else 1
