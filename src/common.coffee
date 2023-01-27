@@ -1,4 +1,5 @@
 import * as Parse from "@dashkite/parse"
+import * as Text from "@dashkite/joy/text"
 
 sp = Parse.text " "
 htab = Parse.re "\t"
@@ -116,7 +117,10 @@ export { token68 }
 
 # auth-param = token BWS "=" BWS ( token / quoted-string )
 authParam = Parse.all [
-  token
+  Parse.pipe [
+    token
+    Parse.map Text.toLowerCase
+  ]
   Parse.skip bws
   Parse.skip Parse.text "="
   Parse.skip bws
@@ -131,6 +135,7 @@ export { authParam }
 # auth-scheme = token
 authScheme = Parse.pipe [
   token
+  Parse.map Text.toLowerCase
   Parse.tag "scheme"
 ]
 

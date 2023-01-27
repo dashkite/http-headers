@@ -32,6 +32,21 @@ Authorization:
       scheme: foo
       parameters:
         bar: abcdef==
+
+  - name: simple w uppercase scheme
+    input: FOO bar=baz
+    expect:
+      scheme: foo
+      parameters:
+        bar: baz
+
+  - name: simple w uppercase key
+    input: foo BAR=baz
+    expect:
+      scheme: foo
+      parameters:
+        bar: baz
+
 WWWAuthenticate:
   - name: simple quoted
     input: foo bar="baz"
