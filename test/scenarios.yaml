@@ -32,3 +32,10 @@ Authorization:
       scheme: foo
       parameters:
         bar: abcdef==
+WWWAuthenticate:
+  - name: simple quoted
+    input: foo bar="baz"
+    expect:
+      - scheme: foo
+        parameters:
+          bar: baz

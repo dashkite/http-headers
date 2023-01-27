@@ -18,13 +18,17 @@ do ->
 
         for scenario in subscenarios
 
-          test scenario.name, ->
+          got = parse scenario.input
+
+          test scenario.name, [
             
-            got = parse scenario.input
+            test "parse", ->            
+              assert.deepEqual scenario.expect, got
             
-            assert.deepEqual scenario.expect, got
-            
-            assert.deepEqual scenario.expect,
-              parse format got
+            test "format", ->
+              assert.deepEqual scenario.expect,
+                parse format got
+
+          ]
 
   process.exit if success then 0 else 1

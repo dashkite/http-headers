@@ -115,7 +115,7 @@ token68 = Parse.pipe [
 export { token68 }
 
 # auth-param = token BWS "=" BWS ( token / quoted-string )
-authParam = Parse.log Parse.all [
+authParam = Parse.all [
   token
   Parse.skip bws
   Parse.skip Parse.text "="
@@ -135,3 +135,44 @@ authScheme = Parse.pipe [
 ]
 
 export { authScheme }
+
+# scheme + either an encoded value or a list of parameters
+# credentials = auth-scheme [ 1*SP ( token68 / [ auth-param *( OWS ","
+#  OWS auth-param ) ] ) ]
+# ; as list
+# ; https://www.rfc-editor.org/rfc/rfc9110.html#section-11.4
+# credentials = auth-scheme [ 1*SP ( token68 / #auth-param ) ]
+
+commaDelimited = Parse.all [
+  ows
+  Parse.text ","
+  ows
+]
+
+export { commaDelimited }
+
+credentials = Parse.pipe [
+  Parse.all [
+    authScheme
+    Parse.pipe [
+      Parse.all [
+        Parse.skip Parse.many sp
+        Parse.any [
+          Parse.pipe [
+            Parse.list commaDelimited, authParam
+            Parse.map ( parameters ) -> Object.fromEntries parameters
+            Parse.tag "parameters"
+          ]
+          Parse.pipe [
+            token68
+            Parse.tag "token"
+          ]
+        ]
+      ]
+      Parse.first
+    ]  
+  ]
+  Parse.merge
+]
+
+export { credentials }

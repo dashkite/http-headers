@@ -7,7 +7,7 @@ specifiers:
   '@dashkite/genie': ^0.5.11
   '@dashkite/genie-presets': ^0.6.0
   '@dashkite/joy': ^0.3.16
-  '@dashkite/parse': ^0.4.1
+  '@dashkite/parse': link:../parse
 
 dependencies:
   '@dashkite/joy': 0.3.16
