@@ -7,11 +7,11 @@ specifiers:
   '@dashkite/genie': ^0.5.11
   '@dashkite/genie-presets': ^0.6.0
   '@dashkite/joy': ^0.3.16
-  '@dashkite/parse': link:../parse
+  '@dashkite/parse': ^0.4.2
 
 dependencies:
   '@dashkite/joy': 0.3.16
-  '@dashkite/parse': 0.4.1
+  '@dashkite/parse': 0.4.2
 
 devDependencies:
   '@dashkite/amen': 0.2.0
@@ -2186,8 +2186,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@dashkite/parse/0.4.1:
-    resolution: {integrity: sha512-mWEpNYB2NpXK9YQqINy9wbR+yjC5DTIWQDC9bHi0OPI+DylPNcmBnZSSUqphDJvG4YK6AJX3ORLpe3Par1zXuw==}
+  /@dashkite/parse/0.4.2:
+    resolution: {integrity: sha512-x01YEU+yByb2RkvfOTL+4xD00KQdyhDUKxrN1YzK1xMGJfH9xZw18L6Qphc1r7CXrLWtBT3Pu6RDNqomp9dqrg==}
     dev: false
 
   /@dashkite/writeme/0.2.0:
