@@ -47,6 +47,13 @@ Authorization:
       parameters:
         bar: baz
 
+  - name: email address as param
+    input: email email="alice@acme.inc"
+    expect:
+      scheme: email
+      parameters: 
+        email: alice@acme.inc
+
 WWWAuthenticate:
   - name: simple quoted
     input: foo bar="baz"
