@@ -159,7 +159,7 @@ export { commaDelimited }
 credentials = Parse.pipe [
   Parse.all [
     authScheme
-    Parse.pipe [
+    Parse.optional Parse.pipe [
       Parse.all [
         Parse.skip Parse.many sp
         Parse.any [

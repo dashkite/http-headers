@@ -71,3 +71,8 @@ WWWAuthenticate:
       - scheme: baz
         parameters:
           bar: foo
+
+  - name: just the scheme
+    input: foo
+    expect:
+      - scheme: foo

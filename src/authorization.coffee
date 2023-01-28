@@ -10,7 +10,7 @@ parse = Parse.parser credentials
 parseToken = Parse.parser token
 
 format = ({ scheme, parameters, token }) ->
-  if parameters?
+  if scheme? && parameters?
     result = []
     for key, value of parameters
       try
@@ -20,8 +20,10 @@ format = ({ scheme, parameters, token }) ->
         value = JSON.stringify value
       result.push "#{key}=#{value}"
     "#{ scheme } #{result.join ', '}"
-  else if token?
+  else if scheme? && token?
     "#{ scheme } #{ token }"
+  else if scheme?
+    scheme
   else
     throw new Error "invalid authorization header description"
 
