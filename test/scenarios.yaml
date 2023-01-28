@@ -54,3 +54,13 @@ WWWAuthenticate:
       - scheme: foo
         parameters:
           bar: baz
+
+  - name: multiple credentials
+    input: foo bar="baz", baz bar="foo"
+    expect:
+      - scheme: foo
+        parameters:
+          bar: baz
+      - scheme: baz
+        parameters:
+          bar: foo

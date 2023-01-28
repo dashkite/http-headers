@@ -86,7 +86,7 @@ export { quotedString }
 # tchar = "!" / "#" / "$" / "%" / "&" / "'" / "*" / "+" / "-" / "." /
 # "^" / "_" / "`" / "|" / "~" / DIGIT / ALPHA
 
-tchar = Parse.re /^([!#$%&'*+-.^_`|~\d]|[a-zA-Z])/
+tchar = Parse.re /^[!#$%&'*+\-.^_`|~\da-zA-Z]/
 
 export { tchar }
 
