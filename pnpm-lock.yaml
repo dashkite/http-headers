@@ -5,19 +5,21 @@ specifiers:
   '@dashkite/amen-console': ^0.0.2
   '@dashkite/assert': ^0.1.4
   '@dashkite/genie': ^0.5.11
+  '@dashkite/genie-modules': link:../genie-modules
   '@dashkite/genie-presets': ^0.6.0
   '@dashkite/joy': ^0.3.16
-  '@dashkite/parse': ^0.4.2
+  '@dashkite/parse': ^0.4.3
 
 dependencies:
   '@dashkite/joy': 0.3.16
-  '@dashkite/parse': 0.4.2
+  '@dashkite/parse': 0.4.3
 
 devDependencies:
   '@dashkite/amen': 0.2.0
   '@dashkite/amen-console': 0.0.2
   '@dashkite/assert': 0.1.4
   '@dashkite/genie': 0.5.11
+  '@dashkite/genie-modules': link:../genie-modules
   '@dashkite/genie-presets': 0.6.4
 
 packages:
@@ -2186,8 +2188,10 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@dashkite/parse/0.4.2:
-    resolution: {integrity: sha512-x01YEU+yByb2RkvfOTL+4xD00KQdyhDUKxrN1YzK1xMGJfH9xZw18L6Qphc1r7CXrLWtBT3Pu6RDNqomp9dqrg==}
+  /@dashkite/parse/0.4.3:
+    resolution: {integrity: sha512-bE0kBjaGYjUnCzWJelQnx8vsfJ9YP07aRTVFZoY7TZWvMmnihoCSugL4IVWAOA2O0EAZXjT8FcjA4bNJ/BQwwg==}
+    dependencies:
+      '@dashkite/joy': 0.3.16
     dev: false
 
   /@dashkite/writeme/0.2.0:
