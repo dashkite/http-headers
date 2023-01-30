@@ -4,21 +4,25 @@ specifiers:
   '@dashkite/amen': ^0.2.0
   '@dashkite/amen-console': ^0.0.2
   '@dashkite/assert': ^0.1.4
+  '@dashkite/bake': ^0.0.6
   '@dashkite/genie': ^0.5.11
   '@dashkite/genie-presets': ^0.6.0
   '@dashkite/joy': ^0.3.16
-  '@dashkite/parse': ^0.4.2
+  '@dashkite/parse': ^0.4.3
+  '@dashkite/polaris': link:../polaris
 
 dependencies:
   '@dashkite/joy': 0.3.16
-  '@dashkite/parse': 0.4.2
+  '@dashkite/parse': 0.4.3
 
 devDependencies:
   '@dashkite/amen': 0.2.0
   '@dashkite/amen-console': 0.0.2
   '@dashkite/assert': 0.1.4
+  '@dashkite/bake': 0.0.6
   '@dashkite/genie': 0.5.11
   '@dashkite/genie-presets': 0.6.4
+  '@dashkite/polaris': link:../polaris
 
 packages:
 
@@ -2097,6 +2101,18 @@ packages:
       - supports-color
     dev: true
 
+  /@dashkite/bake/0.0.6:
+    resolution: {integrity: sha512-yBD2B4l1+nGa4JZ+CgxmhxDGnZvs+SIB8xl/rheINdmbfe1/tXswcwLsrz8qP5x4/9mDFVOq00vKauUCj0cIJA==}
+    dependencies:
+      '@dashkite/base64': 1.0.1
+      '@dashkite/joy': 0.3.16
+      '@dashkite/utf8': 1.0.1
+    dev: true
+
+  /@dashkite/base64/1.0.1:
+    resolution: {integrity: sha512-7O3HajSgWaie/kme1bcdXQnVsMXn4A5m9YOaxWnEZ8z9LCrnJ8BGnpTgFJUqSC4mv0Z/0NBcwTmeGCoEc9VYoA==}
+    dev: true
+
   /@dashkite/genie-presets/0.6.4:
     resolution: {integrity: sha512-D97FVPYc0ersBOAWLOaY0bS9O/dvoDr10SB2mq63qM08bjopQJsPH+rZ/ienLCWpONFpa83B3274Xjz9wXSw5A==}
     dependencies:
@@ -2186,9 +2202,15 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@dashkite/parse/0.4.2:
-    resolution: {integrity: sha512-x01YEU+yByb2RkvfOTL+4xD00KQdyhDUKxrN1YzK1xMGJfH9xZw18L6Qphc1r7CXrLWtBT3Pu6RDNqomp9dqrg==}
+  /@dashkite/parse/0.4.3:
+    resolution: {integrity: sha512-bE0kBjaGYjUnCzWJelQnx8vsfJ9YP07aRTVFZoY7TZWvMmnihoCSugL4IVWAOA2O0EAZXjT8FcjA4bNJ/BQwwg==}
+    dependencies:
+      '@dashkite/joy': 0.3.16
     dev: false
+
+  /@dashkite/utf8/1.0.1:
+    resolution: {integrity: sha512-58HZrEijYUG9p8SAf4o/NR7U3qUq//9XbkQ7T5cHIY/RFjCVg9vpWZlHXkcbZp7v3CAMJgEGVXt/5/upvOBQAw==}
+    dev: true
 
   /@dashkite/writeme/0.2.0:
     resolution: {integrity: sha512-bAKlW98jo3H/2K/9UyLxBH2GzHpd7U6OUXNH5dCDCRQlTbC1HlpeswojEGPmTGbM8soR+vStItJ7siSqywqn0A==}

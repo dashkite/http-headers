@@ -54,6 +54,13 @@ Authorization:
       parameters: 
         email: alice@acme.inc
 
+  - name: base64 as a param
+    input: foo bar="abc123=="
+    expect:
+      scheme: foo
+      parameters:
+        bar: abc123==
+
 WWWAuthenticate:
   - name: simple quoted
     input: foo bar="baz"
