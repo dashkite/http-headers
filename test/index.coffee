@@ -3,6 +3,7 @@ import {test, success} from "@dashkite/amen"
 import print from "@dashkite/amen-console"
 
 import { convert } from "@dashkite/bake"
+import { expand } from "@dashkite/polaris"
 
 import * as Headers from "../src"
 
@@ -27,7 +28,6 @@ do ->
               assert.deepEqual scenario.expect, got
             
             test "format", ->
-              console.log format scenario.expect
               assert.deepEqual scenario.expect,
                 parse format scenario.expect
 
@@ -43,6 +43,20 @@ do ->
                 parse JSON.parse convert from: "base64", to: "utf8",
                   convert from: "utf8", to: "base64",
                     JSON.stringify format scenario.expect
+
+            # simulating the full process for encoding multiple
+            # credentials and decoding on the client
+            test "credentials", ->
+              assert.deepEqual scenario.expect,
+                parse JSON.parse convert 
+                  from: "base64"
+                  to: "utf8"
+                  convert 
+                    from: "utf8"
+                    to: "base64",
+                    JSON.stringify expand "${ credential }",
+                      credential: format scenario.expect
+
           ]
 
   process.exit if success then 0 else 1
