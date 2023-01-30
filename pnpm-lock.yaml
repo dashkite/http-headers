@@ -6,6 +6,7 @@ specifiers:
   '@dashkite/assert': ^0.1.4
   '@dashkite/bake': ^0.0.6
   '@dashkite/genie': ^0.5.11
+  '@dashkite/genie-modules': link:../genie-modules
   '@dashkite/genie-presets': ^0.6.0
   '@dashkite/joy': ^0.3.16
   '@dashkite/parse': ^0.4.3
@@ -21,6 +22,7 @@ devDependencies:
   '@dashkite/assert': 0.1.4
   '@dashkite/bake': 0.0.6
   '@dashkite/genie': 0.5.11
+  '@dashkite/genie-modules': link:../genie-modules
   '@dashkite/genie-presets': 0.6.4
   '@dashkite/polaris': link:../polaris
 
