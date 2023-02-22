@@ -181,3 +181,64 @@ credentials = Parse.pipe [
 ]
 
 export { credentials }
+
+semicolonDelimited = Parse.all [
+  ows
+  Parse.text ";"
+  ows
+]
+
+export { semicolonDelimited }
+
+parameter = Parse.all [
+  token
+  Parse.skip Parse.all [
+    bws
+    Parse.text "="
+    bws
+  ]
+  Parse.any [
+    token
+    quotedString
+  ]
+]
+
+export { parameter }
+
+parameterList = Parse.pipe [
+  Parse.list semicolonDelimited, parameter
+  Parse.map ( values ) -> Object.fromEntries values
+] 
+
+export { parameterList }
+
+# TODO implement BNF? 
+# https://www.rfc-editor.org/rfc/rfc3986.html#section-4.1
+# TODO the last expressions explicitly exclude > to facilitate <URL> expressions
+# regexp adapted from:
+# https://www.rfc-editor.org/rfc/rfc3986.html#appendix-B
+
+match = (x, expected) ->
+  (c) ->
+    if (m = (c.rest.match x))?
+      {c...
+      value: m
+      rest: c.rest[(m.index + m[0].length)..]}
+    else
+      {c...
+      error:
+        expected: expected ? inspect x
+        got: c.rest}
+
+uriReference = Parse.pipe [
+  match /^(([^:\/?#>]+):)?(\/\/([^\/?#>]*))?([^?#>]*)(\?([^#>]*))?(#([^>]*))?/
+  Parse.map ( matches ) ->
+    scheme = matches[ 2 ]
+    authority = matches[ 4 ]
+    path = matches[ 5 ]
+    query = matches[ 7 ]
+    fragment = matches[ 9 ]
+    { scheme, authority, path, query, fragment }
+]
+
+export { uriReference }
