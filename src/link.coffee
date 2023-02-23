@@ -34,27 +34,11 @@ links = Parse.list commaDelimited, link
 
 parse = Parse.parser links
 
-# adapted from https://www.rfc-editor.org/rfc/rfc3986.html#section-5.3
-formatURI = ({ scheme, authority, path, query, fragment }) ->
-  result = ""
-  if scheme?
-    result += "#{ scheme }:"
-  if authority?
-    result += "//#{ authority }"
-  result += path
-  if query?
-    result += "?#{ query }"
-  if fragment?
-    result += "##{ fragment }"
-  result
-
 parseToken = Parse.parser token
 
 format = ( links ) ->
   result = do ->
     for { url, parameters } in links
-      if url.scheme?
-        url = formatURI url
       if parameters?
         _result = do ->
           for key, value of parameters

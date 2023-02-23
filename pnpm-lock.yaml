@@ -11,10 +11,12 @@ specifiers:
   '@dashkite/joy': ^0.3.16
   '@dashkite/parse': ^0.4.3
   '@dashkite/polaris': link:../polaris
+  '@dashkite/url-codex': link:../url-codex
 
 dependencies:
   '@dashkite/joy': 0.3.16
   '@dashkite/parse': 0.4.3
+  '@dashkite/url-codex': link:../url-codex
 
 devDependencies:
   '@dashkite/amen': 0.2.0

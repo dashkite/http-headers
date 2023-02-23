@@ -88,17 +88,11 @@ Link:
   - name: simple URL, no params
     input: "<https://acme.org/accounts/alice>"
     expect:
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/alice
+      - url: "https://acme.org/accounts/alice"
   - name: simple URL, with parameters
     input: "<https://acme.org/accounts/alice> rel=alias"
     expect:
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/alice
+      - url: "https://acme.org/accounts/alice"
         parameters:
           rel: alias
   - name: multipe URLs, no parameters
@@ -106,29 +100,17 @@ Link:
       <https://acme.org/accounts/alice>,
       <https://acme.org/accounts/bob>
     expect:
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/alice
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/bob
+      - url: "https://acme.org/accounts/alice"
+      - url: "https://acme.org/accounts/bob"
   - name: multipe URLs, with parameters
     input: >-
       <https://acme.org/accounts/alice> rel=alias,
       <https://acme.org/accounts/bob> rel=alias
     expect:
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/alice
+      - url: "https://acme.org/accounts/alice"
         parameters:
           rel: alias
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/bob
+      - url: "https://acme.org/accounts/bob"
         parameters:
           rel: alias
   - name: multipe URLs, multiple quoted parameters
@@ -136,17 +118,11 @@ Link:
       <https://acme.org/accounts/alice> rel=alias; type="application/json",
       <https://acme.org/accounts/bob> rel=alias; type="application/json"
     expect:
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/alice
+      - url: "https://acme.org/accounts/alice"
         parameters:
           rel: alias
           type: "application/json"
-      - url:
-          scheme: https
-          authority: acme.org
-          path: /accounts/bob
+      - url: "https://acme.org/accounts/bob"
         parameters:
           rel: alias
           type: "application/json"
