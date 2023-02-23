@@ -16,7 +16,7 @@ link = Parse.pipe [
   Parse.all [
     Parse.pipe [
       Parse.between [ "<", ">" ], uriReference
-      Parse.tag "url"
+      Parse.tag "uri"
     ]
     Parse.optional Parse.pipe [
       Parse.all [
@@ -38,7 +38,7 @@ parseToken = Parse.parser token
 
 format = ( links ) ->
   result = do ->
-    for { url, parameters } in links
+    for { uri, parameters } in links
       if parameters?
         _result = do ->
           for key, value of parameters
@@ -47,9 +47,9 @@ format = ( links ) ->
               "#{ key }=#{ value }"
             catch
               "#{ key }=#{ JSON.stringify value }"
-        "<#{ url }> #{_result.join '; '}"
+        "<#{ uri }> #{_result.join '; '}"
       else
-        "<#{ url }>"
+        "<#{ uri }>"
   result.join ", "
 
 export {
