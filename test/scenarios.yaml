@@ -61,6 +61,14 @@ Authorization:
       parameters:
         bar: abc123==
 
+  - name: multipe parameters
+    input: foo bar=abc, baz=def
+    expect:
+      scheme: foo
+      parameters:
+        bar: abc
+        baz: def
+
 WWWAuthenticate:
   - name: simple quoted
     input: foo bar="baz"

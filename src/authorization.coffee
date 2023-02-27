@@ -9,6 +9,7 @@ $ =
   assign: "="
   escape: "\\"
   token: /^[!#$%&'*+\-\.^_`|~\da-zA-Z]+/
+  comma: ","
 
 unquote = ( state ) ->
   if ( state.current.startsWith '"' ) && ( state.current.endsWith '"' )
@@ -120,6 +121,16 @@ scan = Scan.make "start",
     [ $.escape ]: Scan.pipe [
       Scan.skip
       Scan.push "escape"
+    ]
+
+    [ $.comma ]: Scan.pipe [
+      Scan.skip
+      unquote
+      Scan.match $.token
+      Scan.tag "value"
+      Scan.save "output"
+      Scan.clear
+      Scan.poke "parameter"
     ]
 
     end: Scan.pipe [
