@@ -2,6 +2,8 @@ import assert from "@dashkite/assert"
 import {test, success} from "@dashkite/amen"
 import print from "@dashkite/amen-console"
 
+import * as Time from "@dashkite/joy/time"
+
 import { convert } from "@dashkite/bake"
 import { expand } from "@dashkite/polaris"
 
@@ -75,6 +77,19 @@ do ->
                       to: "base64",
                       JSON.stringify expand "${ credential }",
                         credential: format scenario.expect
+
+              test "benchmark", ->
+                expect = structuredClone scenario.expect
+                if expect.token?
+                  expect.token = expect.token.repeat 1000
+                else
+                  for key, value of expect.parameters
+                    expect.parameters[ key ] = value.repeat 1000
+                input = format expect
+                ms = Time.benchmark ->
+                  compact parse input
+                console.log ms
+
 
           ]
 
