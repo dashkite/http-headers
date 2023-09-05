@@ -38,7 +38,6 @@
     "@dashkite/bake": "^0.0.6",
     "@dashkite/genie": "link:../genie",
     "@dashkite/genie-modules": "link:../genie-modules",
-    "@dashkite/genie-presets": "link:../genie-presets",
     "@dashkite/polaris": "link:../polaris"
   },
   "dependencies": {
