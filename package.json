@@ -38,6 +38,7 @@
     "@dashkite/bake": "^0.0.6",
     "@dashkite/genie": "link:../genie",
     "@dashkite/genie-coffee": "link:../genie-coffee",
+    "@dashkite/genie-coffee-watch": "link:../genie-coffee-watch",
     "@dashkite/genie-modules": "link:../genie-modules",
     "@dashkite/genie-yaml": "link:../genie-yaml",
     "@dashkite/polaris": "link:../polaris"
