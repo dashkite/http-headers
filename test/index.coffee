@@ -12,7 +12,6 @@ import * as Headers from "../src"
 import scenarios from "./scenarios"
 
 # quick and dirty way to get rid of undefined
-# TODO should equality work for undefined?
 compact = ( value ) -> JSON.parse JSON.stringify value
 
 do ->

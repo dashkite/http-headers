@@ -213,11 +213,6 @@ parameterList = Parse.pipe [
 
 export { parameterList }
 
-# TODO implement BNF? 
-# https://www.rfc-editor.org/rfc/rfc3986.html#section-4.1
-# TODO the last expressions explicitly exclude > to facilitate <URL> expressions
-# regexp adapted from:
-# https://www.rfc-editor.org/rfc/rfc3986.html#appendix-B
 
 uriReference = Parse.pipe [
   Parse.re /^(([^:\/?#>]+):)?(\/\/([^\/?#>]*))?([^?#>]*)(\?([^#>]*))?(#([^>]*))?/
