@@ -42,7 +42,8 @@
     "@dashkite/genie-module": "link:../genie-module",
     "@dashkite/genie-release": "link:../genie-release",
     "@dashkite/genie-yaml": "link:../genie-yaml",
-    "@dashkite/polaris": "link:../polaris"
+    "@dashkite/polaris": "link:../polaris",
+    "@dashkite/vista": "link:../vista"
   },
   "dependencies": {
     "@dashkite/joy": "^0.3.16",
