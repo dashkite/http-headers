@@ -11,6 +11,9 @@ importers:
       '@dashkite/joy':
         specifier: ^0.3.16
         version: 0.3.16
+      '@dashkite/media-type':
+        specifier: link:../media-type
+        version: link:../media-type
       '@dashkite/parse':
         specifier: ^0.4.3
         version: 0.4.3
