@@ -12,8 +12,8 @@ importers:
         specifier: ^0.3.16
         version: 0.3.16
       '@dashkite/media-type':
-        specifier: link:../media-type
-        version: link:../media-type
+        specifier: 0.2.0
+        version: 0.2.0
       '@dashkite/parse':
         specifier: ^0.4.3
         version: 0.4.3
@@ -665,6 +665,9 @@ packages:
 
   '@dashkite/masonry@0.14.0':
     resolution: {integrity: sha512-5POHf/fpqgFba4Xbrr8oNHIpkKTD1WgFTZMjBZBvluv8YBWzLayAd9l4R0TYy+MybBVFFJ2Tj7v5DlIu6dPgvw==}
+
+  '@dashkite/media-type@0.2.0':
+    resolution: {integrity: sha512-XEvcDeqFeiX6zKhs8jIc4+97xkOdOfssN+kYn5nnoRoXP4WEI+Em3frdkGtl71oltgh27Y377bImWw5ExK/juw==}
 
   '@dashkite/parse@0.4.3':
     resolution: {integrity: sha512-bE0kBjaGYjUnCzWJelQnx8vsfJ9YP07aRTVFZoY7TZWvMmnihoCSugL4IVWAOA2O0EAZXjT8FcjA4bNJ/BQwwg==}
@@ -2256,6 +2259,11 @@ snapshots:
       fast-glob: 3.3.3
     transitivePeerDependencies:
       - supports-color
+
+  '@dashkite/media-type@0.2.0':
+    dependencies:
+      '@dashkite/joy': 0.3.16
+      '@dashkite/parse': 0.4.3
 
   '@dashkite/parse@0.4.3':
     dependencies:
