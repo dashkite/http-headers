@@ -18,8 +18,8 @@ importers:
         specifier: ^0.4.3
         version: 0.4.3
       '@dashkite/scan':
-        specifier: link:../scan
-        version: link:../scan
+        specifier: 0.2.0
+        version: 0.2.0
       '@dashkite/url-codex':
         specifier: link:../url-codex
         version: link:../url-codex
@@ -642,6 +642,9 @@ packages:
   '@dashkite/kaiko@0.3.3':
     resolution: {integrity: sha512-XnAvVr9y2MsDqMLr4A24vkLF7Iuq3E8RjHEEpqhe29P5NevVX9jXKcXUStNMp9MSJbjHd2pqUNiM5Vvdja9ggg==}
 
+  '@dashkite/lru-cache@0.1.0':
+    resolution: {integrity: sha512-bAN6/NxYrorgiKMdh0/f6U6AMdLoBFn9sJUZDD+Od/Fw6O1istAMF2hQugdO3SOeBOUi9dQN+rXMP60dJ/2zOw==}
+
   '@dashkite/masonry-coffee@0.2.0':
     resolution: {integrity: sha512-xJO48SIRpsYbJF32CwpA6yeEJhNh+DtxCucyt4MNJqO0yru9X7hoxZsHneRoUE+kISD0KTO8DLQiHv21nU/V2A==}
 
@@ -671,6 +674,9 @@ packages:
 
   '@dashkite/parse@0.4.3':
     resolution: {integrity: sha512-bE0kBjaGYjUnCzWJelQnx8vsfJ9YP07aRTVFZoY7TZWvMmnihoCSugL4IVWAOA2O0EAZXjT8FcjA4bNJ/BQwwg==}
+
+  '@dashkite/scan@0.2.0':
+    resolution: {integrity: sha512-Ihzyw90G+RAB7ietzrEZHDivqwsr4HdCm9LSUGKLFERN26RNvXmLp8CEE1OCkucH6ipfmDSF/ga8OVxxp0gGAw==}
 
   '@dashkite/utf8@1.0.1':
     resolution: {integrity: sha512-58HZrEijYUG9p8SAf4o/NR7U3qUq//9XbkQ7T5cHIY/RFjCVg9vpWZlHXkcbZp7v3CAMJgEGVXt/5/upvOBQAw==}
@@ -2209,6 +2215,8 @@ snapshots:
 
   '@dashkite/kaiko@0.3.3': {}
 
+  '@dashkite/lru-cache@0.1.0': {}
+
   '@dashkite/masonry-coffee@0.2.0':
     dependencies:
       '@swc/core': 1.11.7
@@ -2268,6 +2276,10 @@ snapshots:
   '@dashkite/parse@0.4.3':
     dependencies:
       '@dashkite/joy': 0.3.16
+
+  '@dashkite/scan@0.2.0':
+    dependencies:
+      '@dashkite/lru-cache': 0.1.0
 
   '@dashkite/utf8@1.0.1': {}
 
