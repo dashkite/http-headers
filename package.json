@@ -42,7 +42,7 @@
     "@dashkite/genie-coffee": "0.2.0",
     "@dashkite/genie-release": "^0.2.8",
     "@dashkite/genie-yaml": "0.1.0",
-    "@dashkite/polaris": "link:../polaris"
+    "@dashkite/polaris": "0.3.0"
   },
   "dependencies": {
     "@dashkite/joy": "^0.3.16",

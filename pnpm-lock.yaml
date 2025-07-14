@@ -52,8 +52,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0
       '@dashkite/polaris':
-        specifier: link:../polaris
-        version: link:../polaris
+        specifier: 0.3.0
+        version: 0.3.0
 
 packages:
 
@@ -675,6 +675,9 @@ packages:
   '@dashkite/parse@0.4.3':
     resolution: {integrity: sha512-bE0kBjaGYjUnCzWJelQnx8vsfJ9YP07aRTVFZoY7TZWvMmnihoCSugL4IVWAOA2O0EAZXjT8FcjA4bNJ/BQwwg==}
 
+  '@dashkite/polaris@0.3.0':
+    resolution: {integrity: sha512-DnUVo1tlTSTFGz7y0TadJJvY8Ly4HoNeD4+ZVDKWWLLbBLi48le2KyuURZ53KKViom1IuWEFWUl5gNtcZ/2Duw==}
+
   '@dashkite/scan@0.2.0':
     resolution: {integrity: sha512-Ihzyw90G+RAB7ietzrEZHDivqwsr4HdCm9LSUGKLFERN26RNvXmLp8CEE1OCkucH6ipfmDSF/ga8OVxxp0gGAw==}
 
@@ -1160,6 +1163,10 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
+
+  jsonpath-plus@7.2.0:
+    resolution: {integrity: sha512-zBfiUPM5nD0YZSBT/o/fbCUlCcepMIdP0CJZxM1+KgA4f2T206f6VAg9e7mX35+KlMaIc5qXW34f3BnwJ3w+RA==}
+    engines: {node: '>=12.0.0'}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -2277,6 +2284,12 @@ snapshots:
     dependencies:
       '@dashkite/joy': 0.3.16
 
+  '@dashkite/polaris@0.3.0':
+    dependencies:
+      '@dashkite/joy': 0.3.16
+      '@dashkite/scan': 0.2.0
+      jsonpath-plus: 7.2.0
+
   '@dashkite/scan@0.2.0':
     dependencies:
       '@dashkite/lru-cache': 0.1.0
@@ -2754,6 +2767,8 @@ snapshots:
   json-stable-stringify-without-jsonify@1.0.1: {}
 
   json5@2.2.3: {}
+
+  jsonpath-plus@7.2.0: {}
 
   keyv@4.5.4:
     dependencies:
