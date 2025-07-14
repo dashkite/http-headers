@@ -49,6 +49,6 @@
     "@dashkite/media-type": "0.2.0",
     "@dashkite/parse": "^0.4.3",
     "@dashkite/scan": "0.2.0",
-    "@dashkite/url-codex": "link:../url-codex"
+    "@dashkite/url-codex": "0.2.0"
   }
 }
