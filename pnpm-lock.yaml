@@ -52,8 +52,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       '@dashkite/polaris':
-        specifier: ^0.10.10
-        version: 0.10.10
+        specifier: ^0.10.11
+        version: 0.10.11
 
 packages:
 
@@ -687,8 +687,8 @@ packages:
   '@dashkite/parse@0.7.0':
     resolution: {integrity: sha512-lhU3LuRKCUVOgswBHjTvLnGIzhOk+QIxUQVSRNv+U1iPSzjpypFd/EBL5UQQ4qqU2w9u8M63FIBFHcxRiB/oDw==}
 
-  '@dashkite/polaris@0.10.10':
-    resolution: {integrity: sha512-zIVSvsgiY2UGOfclJhpC2lzK68+fFvnAYcy4C1qHOR+++5k0OT8a1ZOsnFQMbLxSIOnPGB5qgcfVKILvC0cFug==}
+  '@dashkite/polaris@0.10.11':
+    resolution: {integrity: sha512-tYYN+Ozxj1oK+7Zt8RNvk6N0XWv/kVlU+GD+jJNAhjpw3iORKbcigcBXl8eu8m/OfPfa525YCNz3N4/Uuf5m5g==}
 
   '@dashkite/scan@0.4.0':
     resolution: {integrity: sha512-fC7D9+SCy34D5qi25ZAH8tzJgqPc9aBBhqrRCQ3RoD6cDrrfvlROxLzKsLfs+zv05yHPtuc/9ZONyyAW3/JTvg==}
@@ -2323,7 +2323,7 @@ snapshots:
     dependencies:
       '@dashkite/joy': 0.3.16
 
-  '@dashkite/polaris@0.10.10':
+  '@dashkite/polaris@0.10.11':
     dependencies:
       '@dashkite/joy': 0.7.0
       '@dashkite/scan': 0.4.0
