@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@dashkite/joy": "^0.7.0",
-    "@dashkite/media-type": "^0.4.0",
+    "@dashkite/media-type": "link:../media-type",
     "@dashkite/parse": "^0.7.0",
     "@dashkite/scan": "^0.4.0",
     "@dashkite/url-codex": "^0.5.0"
