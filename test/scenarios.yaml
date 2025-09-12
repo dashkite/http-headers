@@ -61,7 +61,7 @@ Authorization:
       parameters:
         bar: abc123==
 
-  - name: multipe parameters
+  - name: multiple parameters
     input: foo bar=abc, baz=def
     expect:
       scheme: foo
@@ -103,14 +103,14 @@ Link:
       - uri: "https://acme.org/accounts/alice"
         parameters:
           rel: alias
-  - name: multipe URLs, no parameters
+  - name: multiple URLs, no parameters
     input: >-
       <https://acme.org/accounts/alice>,
       <https://acme.org/accounts/bob>
     expect:
       - uri: "https://acme.org/accounts/alice"
       - uri: "https://acme.org/accounts/bob"
-  - name: multipe URLs, with parameters
+  - name: multiple URLs, with parameters
     input: >-
       <https://acme.org/accounts/alice> rel=alias,
       <https://acme.org/accounts/bob> rel=alias
@@ -121,7 +121,7 @@ Link:
       - uri: "https://acme.org/accounts/bob"
         parameters:
           rel: alias
-  - name: multipe URLs, multiple quoted parameters
+  - name: multiple URLs, multiple quoted parameters
     input: >-
       <https://acme.org/accounts/alice> rel=alias; type="application/json",
       <https://acme.org/accounts/bob> rel=alias; type="application/json"
