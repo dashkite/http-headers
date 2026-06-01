@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/http-headers",
-  "version": "0.12.43",
+  "version": "0.12.44",
   "description": "Parser combinator library for JavaScript",
   "keywords": [
     "parser",
