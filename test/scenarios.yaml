@@ -98,7 +98,7 @@ Link:
     expect:
       - uri: "https://acme.org/accounts/alice"
   - name: simple URL, with parameters
-    input: "<https://acme.org/accounts/alice> rel=alias"
+    input: "<https://acme.org/accounts/alice>; rel=alias"
     expect:
       - uri: "https://acme.org/accounts/alice"
         parameters:
@@ -112,8 +112,8 @@ Link:
       - uri: "https://acme.org/accounts/bob"
   - name: multiple URLs, with parameters
     input: >-
-      <https://acme.org/accounts/alice> rel=alias,
-      <https://acme.org/accounts/bob> rel=alias
+      <https://acme.org/accounts/alice>; rel=alias,
+      <https://acme.org/accounts/bob>; rel=alias
     expect:
       - uri: "https://acme.org/accounts/alice"
         parameters:
@@ -121,10 +121,21 @@ Link:
       - uri: "https://acme.org/accounts/bob"
         parameters:
           rel: alias
+  - name: multiple URLs, quoted rel self and target
+    input: >-
+      <https://kite.dashkite.io/tickets/t1>; rel="self",
+      <https://kite.dashkite.io/accounts/a1>; rel="target"
+    expect:
+      - uri: "https://kite.dashkite.io/tickets/t1"
+        parameters:
+          rel: self
+      - uri: "https://kite.dashkite.io/accounts/a1"
+        parameters:
+          rel: target
   - name: multiple URLs, multiple quoted parameters
     input: >-
-      <https://acme.org/accounts/alice> rel=alias; type="application/json",
-      <https://acme.org/accounts/bob> rel=alias; type="application/json"
+      <https://acme.org/accounts/alice>; rel=alias; type="application/json",
+      <https://acme.org/accounts/bob>; rel=alias; type="application/json"
     expect:
       - uri: "https://acme.org/accounts/alice"
         parameters:

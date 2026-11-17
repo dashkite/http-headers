@@ -1,7 +1,7 @@
 import * as Parse from "@dashkite/parse"
 
 import {
-  ows
+  semicolonDelimited
   parameterList
   uriReference
   commaDelimited
@@ -20,7 +20,7 @@ link = Parse.pipe [
     ]
     Parse.optional Parse.pipe [
       Parse.all [
-        Parse.skip ows
+        Parse.skip semicolonDelimited
         parameterList
       ]
       Parse.first
@@ -47,7 +47,7 @@ format = ( links ) ->
               "#{ key }=#{ value }"
             catch
               "#{ key }=#{ JSON.stringify value }"
-        "<#{ uri }> #{_result.join '; '}"
+        "<#{ uri }>; #{_result.join '; '}"
       else
         "<#{ uri }>"
   result.join ", "
